@@ -89,6 +89,17 @@
   padding: 0;
 }
 
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -986,16 +997,24 @@ kbd {
 }
 
 .accordion-item {
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
-  transition: border-color var(--transition-fast), background var(--transition-fast);
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.accordion-item:hover {
+  background: rgba(22, 33, 58, 0.9);
+  border-color: rgba(99, 102, 241, 0.35);
 }
 
 .accordion-item.is-expanded {
   border-color: var(--border-accent);
-  background: rgba(99, 102, 241, 0.04);
+  background: rgba(20, 28, 48, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.15);
 }
 
 .accordion-trigger {
@@ -1003,16 +1022,37 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.15rem 1.35rem;
+  padding: 1.25rem 1.4rem;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #f8fafc;
+  background: transparent;
+  border: none;
   text-align: left;
   cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.accordion-trigger:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.accordion-trigger:hover .acc-title {
+  color: var(--cyan-400);
 }
 
 .acc-title {
   flex-grow: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.accordion-item.is-expanded .acc-title {
+  color: #ffffff;
 }
 
 .acc-chevron {
