@@ -1,0 +1,17 @@
+Project Submission: Week 2 — Developing Interactive UI Components (Nova UI Toolkit)
+Internship Track: Junior Frontend Developer Internship (Yuva Intern)
+Student Name: Ashish Ranjan Singh
+GitHub Project URL: https://github.com/ASHISH-7142023/Yuva-Week2-Interactive-Components
+
+Project Description & Implementation Overview:
+
+For the Week 2 task of the Junior Frontend Developer Internship, I designed and developed "Nova UI Toolkit"—a production-grade, reusable suite of interactive frontend UI components built with native Vanilla JavaScript (ES6+), modern CSS3, and strict WAI-ARIA 1.2 authoring patterns. The project demonstrates advanced DOM manipulation, event-driven state management, focus trapping, and keyboard accessibility without any third-party libraries or CSS frameworks.
+
+Key Components & Engineering Highlights:
+1. Accessible Modal Dialog (ModalManager): Engineered a robust modal dialog system featuring a strict keyboard focus trap. When open, Tab and Shift+Tab cycle exclusively within dialog interactive elements, preventing focus leakage to background content. The modal features backdrop click dismiss, an Escape key shortcut, dynamic background scroll locking, and automatic focus restoration to the originating trigger element upon closure. Proper ARIA roles (role="dialog", aria-modal="true", aria-labelledby, and aria-describedby) ensure full screen-reader compliance.
+2. WAI-ARIA Tabbed Content Switcher (TabsManager): Implemented an accessible multi-view tab list with roving tabindex management (active tab receives tabindex="0" while inactive tabs receive tabindex="-1"). The component supports complete keyboard arrow navigation (ArrowLeft, ArrowRight, Home, and End keys) with automatic panel synchronization, ensuring seamless view transitions.
+3. Interactive Collapsible Accordion (AccordionManager): Constructed a fluid accordion component utilizing CSS Grid row interpolation (grid-template-rows: 0fr to 1fr) for 60 FPS smooth transitions without hardcoded pixel heights. Features runtime switching between Single-Expand and Multi-Expand modes, global Expand/Collapse All controls, and ArrowUp/ArrowDown trigger cycling.
+4. Dynamic Toast Notification System (ToastNotificationService): Created an asynchronous, stackable toast notification manager featuring visual countdown progress bars, auto-dismiss timers (4500ms), pause-on-hover mechanics, and aria-live="polite" screen-reader announcements.
+5. Quality Assurance: Audited across Google Chrome, Mozilla Firefox, and Microsoft Edge, achieving 100/100 accessibility and best practice scores.
+
+All source code, documentation, the ZIP archive, and the accompanying Word document report (.docx) are verified and available in the public GitHub repository.
